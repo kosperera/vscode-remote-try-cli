@@ -1,4 +1,4 @@
-# Try out Console (.NET)
+# Try out Command-Line (.NET)
 
 Develop in .NET 5.0+, includes minimal required set up to get started. In case you were wondering, this `.devcontainer` is:
 
