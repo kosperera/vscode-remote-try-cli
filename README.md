@@ -1,4 +1,4 @@
-# Try out Command-Line (.NET)
+# Try out CLI (.NET)
 
 Develop in .NET 5.0+, includes minimal required set up to get started. In case you were wondering, this `.devcontainer` is:
 
@@ -7,6 +7,13 @@ Develop in .NET 5.0+, includes minimal required set up to get started. In case y
 - Includes with [Azure CLI][azure-cli-docs] and [Node][node-js-docs]
 
 ## Configuration Options
+
+```bash
+dotnet new console -n Weather.Cli -o src/Cli
+dotnet add src/Cli package System.CommandLine.Hosting --prerelease
+dotnet new sln -n Cli
+dotnet sln add src/Cli
+```
 
 - [The VS Code Remote - Containers docs][vscode-remote-docs] is a good source to learn more about `.devcontainer.json` configuration options and its usage.
 - [See .NET Core CLI page][dotnet-core-cli-docs] to learn the full-blown `dotnet` options.
