@@ -4,19 +4,20 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "dotnet build ${workspaceFolder}/test-project/aspnetapp.csproj",
+            "command": "dotnet build ${workspaceFolder}",
             "problemMatcher": "$tsc"
         },
-        {
-            "label": "publish",
-            "type": "shell",
-            "command": "dotnet publish ${workspaceFolder}/test-project/aspnetapp.csproj",
-            "problemMatcher": "$tsc"
-        },
+        // Uncomment to specify the project.
+        // {
+        //     "label": "publish",
+        //     "type": "shell",
+        //     "command": "dotnet publish ${workspaceFolder}/test-project",
+        //     "problemMatcher": "$tsc"
+        // },
         {
             "label": "watch",
             "type": "shell",
-            "command": "dotnet watch -p ${workspaceFolder}/test-project/aspnetapp.csproj run",
+            "command": "dotnet watch -p ${workspaceFolder}/src/Cli run --int-option 123",
             "problemMatcher": "$tsc"
         }
     ]

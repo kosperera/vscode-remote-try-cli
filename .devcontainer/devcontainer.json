@@ -21,6 +21,7 @@
 		// .NET
 		"ms-dotnettools.csharp",
 		"ms-dotnettools.vscode-dotnet-runtime",
+		"ms-vscode.azurecli",
 		// Web
 		"msjsdiag.debugger-for-chrome",
 		"humao.rest-client",
