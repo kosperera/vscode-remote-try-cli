@@ -17,7 +17,7 @@
         {
             "label": "watch",
             "type": "shell",
-            "command": "dotnet watch -p ${workspaceFolder}/src/Cli run --int-option 123",
+            "command": "dotnet watch -p ${workspaceFolder}/src/Cli run greet --name 'John Doe'",
             "problemMatcher": "$tsc"
         }
     ]
