@@ -10,7 +10,8 @@ Develop in .NET 5.0+, includes minimal required set up to get started. In case y
 
 ```bash
 dotnet new console -n Weather.Cli -o src/Cli
-dotnet add src/Cli package System.CommandLine.Hosting --prerelease
+dotnet add src/Cli package Microsoft.Extensions.Hosting  --prerelease
+dotnet add src/Cli package System.CommandLine --prerelease
 dotnet new sln -n Cli
 dotnet sln add src/Cli
 ```
