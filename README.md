@@ -6,6 +6,18 @@ Develop in .NET 5.0+, includes minimal required set up to get started. In case y
 - Ideal for [.NET 5.0+][dotnet-sdk-docker-image] with .NET Core, .NET Core CLI, and ASP.NET Core, and
 - Includes with [Azure CLI][azure-cli-docs] and [Node][node-js-docs]
 
+## Build and Run
+```bash
+# Greet someone
+dotnet run -p src/Cli greet -n "Angry Haslett" # > Hello Angry Haslett!
+
+# Say something to echo
+dotnet run -p src/Cli echo -m "Sad lamarr" -t 2
+# > Starting to Sad lamarr 2 time ...
+# > Sad lamarr for the 1 time ...
+# > Sad lamarr for the 2 time ...
+```
+
 ## Configuration Options
 
 ```bash
