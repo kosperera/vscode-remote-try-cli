@@ -17,7 +17,10 @@
         {
             "label": "watch",
             "type": "shell",
-            "command": "dotnet watch -p ${workspaceFolder}/src/Cli run greet --name 'John Doe'",
+            // Uncomment to watch greet.
+            "command": "dotnet watch -p ${workspaceFolder}/src/Cli run greet -n 'John Doe'",
+            // Uncomment to watch echo.
+            // "command": "dotnet watch -p ${workspaceFolder}/src/Cli run echo -t 4 -m 'Welcome John Doe'",
             "problemMatcher": "$tsc"
         }
     ]
