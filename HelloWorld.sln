@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E13566EB-9F5A-49AE-A248-6D727722C862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Cli", "src\Cli\Weather.Cli.csproj", "{2E23F061-80D8-4008-9DC9-8BA1BB2DC6CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Cli", "src\Cli\HelloWorld.Cli.csproj", "{2E23F061-80D8-4008-9DC9-8BA1BB2DC6CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
