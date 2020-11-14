@@ -3,25 +3,40 @@
     "tasks": [
         {
             "label": "build",
-            "type": "shell",
-            "command": "dotnet build ${workspaceFolder}",
-            "problemMatcher": "$tsc"
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/Cli/HelloWorld.Cli.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
         },
-        // Uncomment to specify the project.
-        // {
-        //     "label": "publish",
-        //     "type": "shell",
-        //     "command": "dotnet publish ${workspaceFolder}/test-project",
-        //     "problemMatcher": "$tsc"
-        // },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/src/Cli/HelloWorld.Cli.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
         {
             "label": "watch",
-            "type": "shell",
-            // Uncomment to watch greet.
-            "command": "dotnet watch -p ${workspaceFolder}/src/Cli run greet -n 'John Doe'",
-            // Uncomment to watch echo.
-            // "command": "dotnet watch -p ${workspaceFolder}/src/Cli run echo -t 4 -m 'Welcome John Doe'",
-            "problemMatcher": "$tsc"
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/src/Cli/HelloWorld.Cli.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }
