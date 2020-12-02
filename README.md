@@ -1,32 +1,35 @@
-# Try out Comman-Line Applications (C#)
+# Try out CLI-based console app (C#)
 
-This repository demonstrates developing a CLI-based console app with .NET 5.0 using developer containers.
+This repository demonstrates developing a CLI-based console app with .NET 5.0 using VS  Code and Development Containers.
 
 ### What's included:
-- Uses .NET 5.0 developer container found in @kosalanuwan/devcontainer
-- Uses `Hosting` extension for dependency injection
-- Uses `CommandLine` for CLI options, args, and commands
-- Configured to build and run from the VS Code tasks
+- Uses .NET 5.0 development container found in [@kosalanuwan/devcontainers][devcontainers-repo]
+- Uses [Microsoft.Extensions.Hosting][ms-hosting-ext-repo] package for [Generic Hosting][generic-hosting-docs] and Dependency Injection
+- Uses [System.CommandLine][command-line-api-repo] package for CLI options, args, and commands
+- Configured to [build and run][vscode-tasks] from the VS Code tasks
 
 ## Quick Start
-If you want to understand how devcontainers work or want to build your own devcontainer, you want to have a look at the dev container page for full-blown instructions.
+If you want to understand how development containers work or want to build your own development container, you want to have a look at [the dev container page][ms-devcontainers-create-docs] for full-blown instructions.
 
 ### Build and run from source
-First, you want to clone the repo locally, then open up the source code in remote container.
+First, you want to fork or clone the repo locally, then open up the source code in remote container.
 
-```bash
+```zsh
+#!/bin/zsh
 gh repo clone kosalanuwan/vscode-remote-try-cli
 cd vscode-remote-try-cli && code .
 ```
 
 With VS  Code:
 
-```bash
+```zsh
+#!/bin/zsh
 # Greet someone
 dotnet run -p Cli/ greet -n "Angry Haslett"
 # > Hello Angry Haslett!
 ```
-```bash
+```zsh
+#!/bin/zsh
 # Say something to echo
 dotnet run -p Cli/ echo -m "Sad Lamarr" -t 2
 # > Starting to Sad lamarr 2 time ...
@@ -35,34 +38,52 @@ dotnet run -p Cli/ echo -m "Sad Lamarr" -t 2
 ```
 
 ## Useful Commands
-Occationally, you will want to repeat the steps to create a console project, add dependencies, and write your own CLI tool.
+Occasionally, you will want to repeat below steps to create a console project, add dependencies, and write your own CLI tool.
 
 With VS Code:
 
-```bash
+```zsh
+#!/bin/zsh
 # Create a new console project
 dotnet new console -n Weather.Cli -o Cli
 ```
-```bash
+```zsh
+#!/bin/zsh
 # Create a new solution to add the project
 dotnet new sln -n Cli
 dotnet sln add Cli/
 ```
-```bash
+```zsh
+#!/bin/zsh
 # Add useful dependencies
 dotnet add Cli/ package Microsoft.Extensions.Hosting  --prerelease
 dotnet add Cli/ package System.CommandLine --prerelease
 ```
 
-## Feedback
-
 ## Related Projects
+This example uses both [@dotnet/command-line-api][command-line-api-repo] and a [flavor of Carmel Eve's DI approach][carmeleve-cli-demo-repo] using the [Genric Host](generic-hosting-docs).
+
+## Feedback
+If you have any technical problems with VS Code or Development Containers, you are better off [asking VS Code Support directly][vscode-support], since you'll end up getting a much faster response back that way.
+
+## Contributing
+The official repo to contribute would be [@microsoft/vscode-dev-containers][ms-devcontainers-repo].
+
+Have a suggestion or a bug fix? Just open a pull request or an issue. Include the development container with a clear folder name and the simplest instructions possible.
 
 ## License
+License under [MIT][lic]
 
-[devcontainers-repo]: https://github.com/microsoft/vscode-dev-containers
-[dotnet-sdk-docker-image]: https://hub.docker.com/_/microsoft-dotnet-sdk/
-[azure-cli-docs]: https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli
-[node-js-docs]: https://nodejs.dev/learn
-[vscode-remote-docs]: https://code.visualstudio.com/docs/remote/containers
-[dotnet-core-cli-docs]: https://docs.microsoft.com/en-us/dotnet/core/tools/
+[devcontainers-repo]: https://github.com/kosalanuwan/devcontainers/#readme
+[ms-hosting-ext-repo]: https://github.com/dotnet/runtime/tree/master/src/libraries/Microsoft.Extensions.Hosting/src
+[generic-hosting-docs]: https://docs.microsoft.com/en-us/dotnet/core/extensions/generic-host
+[command-line-api-repo]: https://github.com/dotnet/command-line-api
+[vscode-tasks]: .vscode/tasks.json
+[ms-devcontainers-create-docs]: https://code.visualstudio.com/docs/remote/create-dev-container
+
+[carmeleve-cli-demo-repo]: https://github.com/carmeleve/SystemCommandLine.Demo/blob/master/SystemCommandLine.Demo/Program.cs
+
+[vscode-support]: https://github.com/microsoft/vscode-dev-containers#contributing-and-feedback
+[ms-devcontainers-repo]: https://github.com/microsoft/vscode-dev-containers#readme
+
+[lic]: LICENSE
