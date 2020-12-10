@@ -1,6 +1,22 @@
 # Try out CLI-based console app (C#)
 
-This repository demonstrates developing a CLI-based console app with .NET 5.0 using VS  Code and Development Containers.
+This repository demonstrates developing a CLI-based hello world console app with .NET 5.0 using VS  Code and Development Containers.
+
+With Temninal:
+```zsh
+#!/bin/zsh
+# Greet someone
+hwld greet -n "Angry Haslett"
+# > Hello Angry Haslett!
+```
+```zsh
+#!/bin/zsh
+# Say something to echo
+hwld echo -m "Sad Lamarr" -t 2
+# > Starting to Sad Lamarr 2 times ...
+# > Sad Lamarr for the 1 time ...
+# > Sad Lamarr for the 2 time ...
+```
 
 ### What's included:
 - Uses .NET 5.0 development container found in [@kosalanuwan/devcontainers][devcontainers-repo]
@@ -12,36 +28,32 @@ This repository demonstrates developing a CLI-based console app with .NET 5.0 us
 If you want to understand how development containers work or want to build your own development container, you want to have a look at [the dev container page][ms-devcontainers-create-docs] for full-blown instructions.
 
 ### Build and run from source
-First, you want to fork or clone the repo locally, then open up the source code in remote container.
+First, you want to fork or clone the repo locally, then open up the source code in VS Code.
 
 ```zsh
 #!/bin/zsh
 gh repo clone kosalanuwan/vscode-remote-try-cli
 cd vscode-remote-try-cli && code .
 ```
+Then, re-open the source in the development container to install minimal runtime tools, plugins, extensions et al.
 
 With VS  Code:
+- Run task: `Reopen in Container`
+- Run task: `build` to clean, restore, and build the project
+- Run task: `watch` to run project in watch mode
 
 ```zsh
 #!/bin/zsh
 # Greet someone
-dotnet run -p Cli/ greet -n "Angry Haslett"
-# > Hello Angry Haslett!
-```
-```zsh
-#!/bin/zsh
+dotnet watch --project Cli/HelloWorld.Cli.csproj run greet -n "Angry Haslett"
 # Say something to echo
-dotnet run -p Cli/ echo -m "Sad Lamarr" -t 2
-# > Starting to Sad lamarr 2 time ...
-# > Sad lamarr for the 1 time ...
-# > Sad lamarr for the 2 time ...
+dotnet watch --project Cli/HelloWorld.Cli.csproj run echo -m "Sad Lamarr" -t 2
 ```
 
 ## Useful Commands
 Occasionally, you will want to repeat below steps to create a console project, add dependencies, and write your own CLI tool.
 
 With VS Code:
-
 ```zsh
 #!/bin/zsh
 # Create a new console project
@@ -61,7 +73,8 @@ dotnet add Cli/ package System.CommandLine --prerelease
 ```
 
 ## Related Projects
-This example uses both [@dotnet/command-line-api][command-line-api-repo] and a [flavor of Carmel Eve's DI approach][carmeleve-cli-demo-repo] using the [Genric Host](generic-hosting-docs).
+- [@dotnet/command-line-api][command-line-api-repo] for implemnting commands and args
+- [A flavor of Carmel Eve's DI approach][carmeleve-cli-demo-repo] using the [Genric Host][generic-hosting-docs].
 
 ## Feedback
 If you have any technical problems with VS Code or Development Containers, you are better off [asking VS Code Support directly][vscode-support], since you'll end up getting a much faster response back that way.
@@ -72,7 +85,7 @@ The official repo to contribute would be [@microsoft/vscode-dev-containers][ms-d
 Have a suggestion or a bug fix? Just open a pull request or an issue. Include the development container with a clear folder name and the simplest instructions possible.
 
 ## License
-License under [MIT][lic]
+The source code is license under the [MIT][lic]
 
 [devcontainers-repo]: https://github.com/kosalanuwan/devcontainers/#readme
 [ms-hosting-ext-repo]: https://github.com/dotnet/runtime/tree/master/src/libraries/Microsoft.Extensions.Hosting/src
