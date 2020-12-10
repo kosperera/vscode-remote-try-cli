@@ -71,6 +71,11 @@ dotnet sln add Cli/
 dotnet add Cli/ package Microsoft.Extensions.Hosting  --prerelease
 dotnet add Cli/ package System.CommandLine --prerelease
 ```
+```zsh
+#!/bin/zsh
+# Run in watch mode
+dotnet watch --project Cli/Weather.Cli.csproj run
+```
 
 ## Related Projects
 - [@dotnet/command-line-api][command-line-api-repo] for implemnting commands and args
