@@ -1,10 +1,10 @@
+using System.CommandLine;
+using System.CommandLine.Invocation;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+
 namespace HelloWorld.Cli.Commands
 {
-    using System.CommandLine;
-    using System.CommandLine.Invocation;
-    using System.Threading.Tasks;
-    using Microsoft.Extensions.Logging;
-
     public class Echo : Command
     {
         private readonly ILogger<Echo> logger;

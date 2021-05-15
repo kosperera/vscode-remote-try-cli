@@ -1,11 +1,11 @@
+using System;
+using System.CommandLine;
+using System.CommandLine.Invocation;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+
 namespace HelloWorld.Cli.Commands
 {
-    using System;
-    using System.CommandLine;
-    using System.CommandLine.Invocation;
-    using System.Threading.Tasks;
-    using Microsoft.Extensions.Logging;
-
     public class Greet : Command
     {
         private readonly ILogger<Greet> logger;

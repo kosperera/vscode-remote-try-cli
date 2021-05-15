@@ -1,15 +1,14 @@
-namespace HelloWorld.Cli.Commands
-{
-    using System;
-    using System.CommandLine;
-    using System.CommandLine.Builder;
-    using System.CommandLine.Parsing;
-    using System.Linq;
-    using System.Reflection;
-    using System.Threading.Tasks;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
+using System;
+using System.CommandLine;
+using System.CommandLine.Builder;
+using System.CommandLine.Parsing;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Hosting;
 
+namespace Microsoft.Extensions.DependencyInjection
+{
     internal static class DependencyExtensions
     {
         public static IServiceCollection AddCommandLineBuilder(this IServiceCollection services) => services.AddSingleton<CommandLineBuilder>(new CommandLineBuilder());
