@@ -7,17 +7,17 @@ services:
       dockerfile: Dockerfile
       args:
         # [Choice] Update 'VARIANT' to pick a .NET version
-        # https://mcr.microsoft.com/v2/vscode/devcontainers/dotnet/tags/list
-        VARIANT: 5.0
+        # https://mcr.microsoft.com/v2/dotnet/sdk/tags/list
+        VARIANT: 6.0
         # Options
-        INSTALL_ZSH: "true"
-        UPGRADE_PACKAGES: "true"
+        # INSTALL_ZSH: "true"
+        # UPGRADE_PACKAGES: "true"
         INSTALL_NODE: "false"
-        NODE_VERSION: "14"
+        # NODE_VERSION: "14"
         INSTALL_AZURE_CLI: "false"
         # On Linux, you may need to update USER_UID and USER_GID below if not your local UID is not 1000.
-        USER_UID: 1000
-        USER_GID: 1000
+        # USER_UID: 1000
+        # USER_GID: 1000
         
     environment:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
