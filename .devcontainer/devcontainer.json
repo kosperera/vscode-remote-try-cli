@@ -8,18 +8,18 @@
 	"settings": {
 		"razor.disabled": true,
 		"terminal.integrated.shell.linux": "/usr/bin/zsh",
-		"mssql.connections": [
-			{
-				"server": "localhost,1433",
-				"database": "",
-				"authenticationType": "SqlLogin",
-				"user": "sa",
-				"password": "P@ssw0rd",
-				"emptyPasswordInput": false,
-				"savePassword": false,
-				"profileName": "mssql-container"
-			}
-		]
+		// "mssql.connections": [
+		// 	{
+		// 		"server": "localhost,1433",
+		// 		"database": "",
+		// 		"authenticationType": "SqlLogin",
+		// 		"user": "sa",
+		// 		"password": "P@ssw0rd",
+		// 		"emptyPasswordInput": false,
+		// 		"savePassword": false,
+		// 		"profileName": "mssql-container"
+		// 	}
+		// ]
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
@@ -30,7 +30,7 @@
 		"ms-vscode.azurecli",
 		"humao.rest-client",
 
-		"ms-mssql.mssql",
+		// "ms-mssql.mssql",
 
 		"christian-kohler.npm-intellisense",
 		"eg2.vscode-npm-script",
@@ -69,7 +69,7 @@
 	//      3. Open a terminal in VS Code and run "mkdir -p /home/vscode/.aspnet/https && mv aspnetapp.pfx /home/vscode/.aspnet/https"
 
 	// postCreateCommand.sh parameters: $1=SA password, $2=dacpac path, $3=sql script(s) path
-	"postCreateCommand": "zsh .devcontainer/post-create.zsh",
+	"postCreateCommand": "dotnet restore",
 	// Uncomment to indicates whether VS Code should stop the containers when the VS Code window is closed / shut down. Values are "none" and "stopCompose" (default).
 	"shutdownAction": "stopCompose"
 
